@@ -24,7 +24,8 @@ export class ProductComponent implements OnInit {
     this.options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   }
 
-  onSelected(value:string){
+  onClick(value:string){
     this.product.quantity = +value;
+    console.log("You have selected " + value)
   }
 }
