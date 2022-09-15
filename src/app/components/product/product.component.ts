@@ -16,10 +16,15 @@ export class ProductComponent implements OnInit {
       id: 1,
       name: '',
       price: 0,
+      quantity: 0
     };
   }
 
   ngOnInit(): void {
     this.options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  }
+
+  onSelected(value:string){
+    this.product.quantity = +value;
   }
 }
