@@ -1,31 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Product } from 'src/app/models/Product';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ItemService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getItems() {
-    return [
-      {
-        id: 1,
-        name: 'The Legend of Zelda: Breath of the Wild',
-        price: 70,
-        quantity: 0,
-      },
-      {
-        id: 2,
-        name: 'Fire Emblem: Three Houses',
-        price: 60,
-        quantity: 0,
-      },
-      {
-        id: 3,
-        name: 'Super Mario Odyssey',
-        price: 60,
-        quantity: 0,
-      },
-    ];
+  getItems(): Observable<Product[]> {
+    return this.http.get<Product[]>('http://localhost:4200/assets/data.json');
   }
 }
