@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { ItemService } from '../../services/item.service';
 
 @Component({
   selector: 'app-product-list',
@@ -10,28 +11,9 @@ export class ProductListComponent implements OnInit {
   title = 'Product List';
   products: Product[] = [];
 
-  constructor() {}
+  constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
-    this.products = [
-      {
-        id: 1,
-        name: 'The Legend of Zelda: Breath of the Wild',
-        price: 70,
-        quantity: 0
-      },
-      {
-        id: 2,
-        name: 'Fire Emblem: Three Houses',
-        price: 60,
-        quantity: 0
-      },
-      {
-        id: 3,
-        name: 'Super Mario Odyssey',
-        price: 60,
-        quantity: 0
-      },
-    ];
+    this.products = this.itemService.getItems();
   }
 }
