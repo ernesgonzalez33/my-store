@@ -3,21 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 import { StoreFrontModule } from './store-front/store-front.module';
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, NavBarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     StoreFrontModule,
-    ShoppingCartModule
+    ShoppingCartModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
