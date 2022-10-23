@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { ShoppingCartModule } from './shopping-cart/shopping-cart.module';
 import { StoreFrontModule } from './store-front/store-front.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [AppComponent, NavBarComponent],
@@ -14,6 +15,7 @@ import { StoreFrontModule } from './store-front/store-front.module';
     AppRoutingModule,
     StoreFrontModule,
     ShoppingCartModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
