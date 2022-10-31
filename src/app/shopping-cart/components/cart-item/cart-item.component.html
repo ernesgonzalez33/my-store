@@ -1,1 +1,11 @@
-<p>cart-item works!</p>
+<h3>{{ cartItem.name }}</h3>
+<img src="{{ cartItem.url }}" alt="{{ cartItem.description }}">
+<p>{{ cartItem.price }}€</p>
+<select #quantity>
+    <option *ngFor="let o of options">
+        {{ o }}
+     </option>
+</select>
+<br>
+<button (click)="onClick(cartItem)">Remove from cart</button>
+<br>
