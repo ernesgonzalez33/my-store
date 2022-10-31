@@ -27,6 +27,6 @@ export class ProductComponent implements OnInit {
 
   onClick(value:string, product: Product){
     this.product.quantity = +value;
-    alert("You have added " + value + " " + product.name + " to the shopping cart");
+    alert("You have added " + product.quantity + " " + product.name + " to the shopping cart");
   }
 }
