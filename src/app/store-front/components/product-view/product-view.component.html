@@ -1,1 +1,11 @@
-<p>product-view works!</p>
+<h3>{{ product.name }}</h3>
+<img src="{{ product.url }}" alt="{{ product.description }}">
+<p>{{ product.price }}€</p>
+<select #quantity>
+    <option *ngFor="let o of options">
+        {{o}}
+     </option>
+</select>
+<br>
+<button (click)="onClick(quantity.value, product)">Add to cart</button>
+<br>

@@ -1,5 +1,5 @@
 <h3>{{ product.name }}</h3>
-<a routerLink="/product/{{ product.id }}"><img src="{{ product.url }}" alt="{{ product.description }}"></a>
+<a routerLink="/product/{{ product.id }}" (click)="onClickImg(product)"><img src="{{ product.url }}" alt="{{ product.description }}"></a>
 <p>{{ product.price }}€</p>
 <select #quantity>
     <option *ngFor="let o of options">

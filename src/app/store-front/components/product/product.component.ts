@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/Product';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { ProductViewService } from '../../services/product-view.service';
 
 @Component({
   selector: 'app-product',
@@ -11,7 +12,7 @@ export class ProductComponent implements OnInit {
   @Input() product: Product;
   options: number[] = [];
 
-  constructor(private shoppingCartService: ShoppingCartService) {
+  constructor(private shoppingCartService: ShoppingCartService, private productViewService: ProductViewService) {
     this.product = {
       id: 1,
       name: '',
@@ -29,5 +30,9 @@ export class ProductComponent implements OnInit {
     this.product.quantity = +value;
     alert("You have added " + product.quantity + " " + product.name + " to the shopping cart");
     this.shoppingCartService.addToShoppingCart(product);
+  }
+
+  onClickImg(product: Product){
+    this.productViewService.setProduct(product)
   }
 }
