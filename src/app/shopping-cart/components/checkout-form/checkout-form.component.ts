@@ -22,7 +22,6 @@ export class CheckoutFormComponent implements OnInit {
 
   onSubmit(): void {
     alert("Thanks for buying with us!");
-    this.submitted = true;
     this.bought.emit();
   }
 

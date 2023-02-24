@@ -1,4 +1,5 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product } from 'src/app/models/Product';
 import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
 
@@ -13,7 +14,7 @@ export class CartComponent implements OnInit {
   shoppingCartProducts: Product[] = [];
   cost: number = 0;
 
-  constructor(private shoppingCartService: ShoppingCartService) { }
+  constructor(private shoppingCartService: ShoppingCartService, private router: Router) { }
 
   ngOnInit(): void {
     this.shoppingCartProducts = this.shoppingCartService.getShoppingCartProducts();
@@ -44,8 +45,9 @@ export class CartComponent implements OnInit {
   }
 
   cleanProducts(): void {
-    this.shoppingCartProducts = [];
+    this.shoppingCartService.clearShoppingCart();
     this.updateCartTotal();
+    this.router.navigate(['success']);
   }
 
 }
