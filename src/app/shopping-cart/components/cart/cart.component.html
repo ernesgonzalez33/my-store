@@ -3,3 +3,5 @@
 <app-cart-item *ngFor="let product of shoppingCartProducts" [cartItem]="product" (changed)="changeCartItemQuantity(product)"></app-cart-item>
 
 <h3>Shopping Cart Total: ${{ cost }}</h3>
+
+<app-checkout-form></app-checkout-form>
