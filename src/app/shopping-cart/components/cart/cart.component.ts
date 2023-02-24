@@ -42,4 +42,9 @@ export class CartComponent implements OnInit {
     });
   }
 
+  cleanProducts(): void {
+    this.shoppingCartProducts = [];
+    this.updateCartTotal();
+  }
+
 }

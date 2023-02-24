@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-checkout-form',
@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutFormComponent implements OnInit {
 
+  @Output() bought = new EventEmitter;
+
   name: string = '';
   address: string = '';
   card: number = 0;
   email: string = '';
+  submitted: boolean = false;
 
   constructor() { }
 
@@ -19,6 +22,8 @@ export class CheckoutFormComponent implements OnInit {
 
   onSubmit(): void {
     alert("Thanks for buying with us!");
+    this.submitted = true;
+    this.bought.emit();
   }
 
 }
