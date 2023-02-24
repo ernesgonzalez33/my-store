@@ -10,6 +10,7 @@ export class CheckoutFormComponent implements OnInit {
   name: string = '';
   address: string = '';
   card: number = 0;
+  email: string = '';
 
   constructor() { }
 
