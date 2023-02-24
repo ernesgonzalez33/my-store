@@ -20,7 +20,14 @@ export class CartComponent implements OnInit {
     this.updateCartTotal();
   }
 
+  changeCartItemQuantity(cartItem: Product){
+    console.log("New quantity is: ", cartItem.quantity);
+    this.updateCartTotal();
+    console.log("New cost is: ", this.cost)
+  }
+
   updateCartTotal(): void {
+    this.cost = 0;
     this.shoppingCartProducts.forEach(product => {
       this.cost = this.cost + (product.price * product.quantity);
     });

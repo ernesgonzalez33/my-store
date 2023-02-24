@@ -3,7 +3,7 @@
 <p>{{ cartItem.price }}€</p>
 <form>
     <label>Quantity:</label>
-    <input [(ngModel)]="cartItem.quantity" value="{{ cartItem.quantity }}" name="quantity"><br>
+    <input [(ngModel)]="cartItem.quantity" value="{{ cartItem.quantity }}" (ngModelChange)="changed.emit(cartItem)" name="quantity"><br>
 </form>
 <br>
 <button (click)="onClick(cartItem)">Remove from cart</button>
