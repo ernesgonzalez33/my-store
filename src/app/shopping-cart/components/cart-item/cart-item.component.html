@@ -1,11 +1,10 @@
 <h3>{{ cartItem.name }}</h3>
 <img src="{{ cartItem.url }}" alt="{{ cartItem.description }}">
 <p>{{ cartItem.price }}€</p>
-<select #quantity>
-    <option *ngFor="let o of options">
-        {{ o }}
-     </option>
-</select>
+<form>
+    <label>Quantity:</label>
+    <input [(ngModel)]="cartItem.quantity" value="{{ cartItem.quantity }}" name="quantity"><br>
+</form>
 <br>
 <button (click)="onClick(cartItem)">Remove from cart</button>
 <br>
