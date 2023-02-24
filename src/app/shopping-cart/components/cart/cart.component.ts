@@ -33,6 +33,7 @@ export class CartComponent implements OnInit {
       if (item == cartItem) this.shoppingCartProducts.splice(index,1);
     });
     this.updateCartTotal();  
+    alert("You have removed " + cartItem.name + " from the shopping cart");
   }
 
   updateCartTotal(): void {
