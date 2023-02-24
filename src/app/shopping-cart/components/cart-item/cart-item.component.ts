@@ -10,6 +10,7 @@ import { Product } from 'src/app/models/Product';
 export class CartItemComponent implements OnInit {
   @Input() cartItem: Product;
   @Output() changed = new EventEmitter;
+  @Output() removed = new EventEmitter;
 
   constructor() {
     this.cartItem = {
@@ -22,10 +23,6 @@ export class CartItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  onClick(cartItem: Product) {
-    alert("Removed from cart");
   }
 
 }

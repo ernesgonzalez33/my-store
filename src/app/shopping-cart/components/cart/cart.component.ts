@@ -21,9 +21,18 @@ export class CartComponent implements OnInit {
   }
 
   changeCartItemQuantity(cartItem: Product){
-    console.log("New quantity is: ", cartItem.quantity);
+    if (cartItem.quantity <= 0){
+      cartItem.quantity = 0;
+      this.removeItem(cartItem);
+    }
     this.updateCartTotal();
-    console.log("New cost is: ", this.cost)
+  }
+
+  removeItem(cartItem: Product) {
+    this.shoppingCartProducts.forEach((item, index)=>{
+      if (item == cartItem) this.shoppingCartProducts.splice(index,1);
+    });
+    this.updateCartTotal();  
   }
 
   updateCartTotal(): void {
