@@ -12,16 +12,32 @@ export class ShoppingCartService {
     this.shoppingCartList = [];
   }
 
-  getShoppingCartProducts(){
+  getShoppingCartProducts() {
     return this.shoppingCartList;
   }
 
-  addToShoppingCart(product: Product){
-    this.shoppingCartList.push(product);
+  addToShoppingCart(product: Product) {
+
+    var duplicated: boolean = false;
+
+    for (let index = 0; index < this.shoppingCartList.length; index++) {
+      
+      if (this.shoppingCartList[index].id == product.id){
+        duplicated = true;
+      }
+      
+    }
+
+    if (duplicated) {
+      alert("This product is already in the cart. Kindly change the quantity directly from there")
+    } else {
+      alert("You have added " + product.quantity + " " + product.name + " to the shopping cart");
+      this.shoppingCartList.push(product);
+    }
     return this.shoppingCartList;
   }
 
-  clearShoppingCart(){
+  clearShoppingCart() {
     this.shoppingCartList = [];
     return this.shoppingCartList;
   }
