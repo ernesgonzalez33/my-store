@@ -1,7 +1,6 @@
-<h1>{{ title }}</h1>
+<app-cart-item class="cart-item" *ngFor="let product of shoppingCartProducts" [cartItem]="product" (changed)="changeCartItemQuantity(product)" (removed)="removeItem(product)"></app-cart-item>
 
-<app-cart-item *ngFor="let product of shoppingCartProducts" [cartItem]="product" (changed)="changeCartItemQuantity(product)" (removed)="removeItem(product)"></app-cart-item>
-
+<br>
 <h3>Shopping Cart Total: ${{ cost }}</h3>
 
 <app-checkout-form (bought)="cleanProducts()"></app-checkout-form>

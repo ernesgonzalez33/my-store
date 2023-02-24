@@ -1,15 +1,15 @@
-<form #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted">
-    <label>Full Name</label>
-    <input type="text" required minlength="3" placeholder="Minimum 3 characters" name="name" [(ngModel)]="name">
+<form class="form-margin" #form="ngForm" (ngSubmit)="onSubmit()" *ngIf="!submitted">
+    <label>Full Name</label><br>
+    <input type="text" required minlength="3" placeholder="Minimum 3 characters" name="name" [(ngModel)]="name"><br>
 
-    <label>Address</label>
-    <input type="text" required minlength="6" placeholder="Minimum 6 characters" name="address" [(ngModel)]="address">
+    <label>Address</label><br>
+    <input type="text" required minlength="6" placeholder="Minimum 6 characters" name="address" [(ngModel)]="address"><br>
 
-    <label>Email</label>
-    <input type="text" required email placeholder="Enter your email address" name="email" [(ngModel)]="email">
+    <label>Email</label><br>
+    <input type="text" required email placeholder="Enter your email address" name="email" [(ngModel)]="email"><br>
 
-    <label>Card Number</label>
-    <input type="text" required minlength="16" maxlength="16" pattern="^[0-9]*$" placeholder="Enter your credit card number" name="card" [(ngModel)]="card">
+    <label>Card Number</label><br>
+    <input type="text" required minlength="16" maxlength="16" pattern="^[0-9]*$" placeholder="Enter your credit card number" name="card" [(ngModel)]="card"><br>
 
     <button type="submit" [disabled]="form.invalid">Submit</button>
 </form>
